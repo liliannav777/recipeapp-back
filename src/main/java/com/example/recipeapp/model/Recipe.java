@@ -12,14 +12,18 @@ public class Recipe {
 
     private String name;
     private String description;
+    private String imageUrl;  // URL de l'image de la recette
 
     @ElementCollection
-    private List<String> ingredients;
+    private List<String> ingredients;  // Liste des ingrédients
 
-    private int rating;
+    @ElementCollection
+    private List<String> steps;  // Étapes de préparation
+
+    private Integer likes;  // Note de la recette
+
 
     // Getters et setters
-
     public Long getId() {
         return id;
     }
@@ -44,6 +48,14 @@ public class Recipe {
         this.description = description;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public List<String> getIngredients() {
         return ingredients;
     }
@@ -52,11 +64,19 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-    public int getRating() {
-        return rating;
+    public List<String> getSteps() {
+        return steps;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
+    public void setSteps(List<String> steps) {
+        this.steps = steps;
+    }
+
+    public Integer getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Integer likes) {
+        this.likes = likes;
     }
 }

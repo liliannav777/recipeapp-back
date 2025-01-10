@@ -21,20 +21,4 @@ public class RecipeService {
                 .filter(recipe -> ingredients.stream().allMatch(recipe.getIngredients()::contains))
                 .toList();
     }
-
-    public List<Recipe> getAllRecipes() {
-        return recipeRepository.findAll();
-    }
-
-    public Recipe getRecipeById(Long id) {
-        return recipeRepository.findById(id).orElse(null);
-    }
-
-    public Recipe addRecipe(Recipe recipe) {
-        return recipeRepository.save(recipe);
-    }
-
-    public void deleteRecipe(Long id) {
-        recipeRepository.deleteById(id);
-    }
 }
